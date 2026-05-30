@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KRA:FT — specialty coffee, cocktails, barbers &amp; tattoo · 14 Wood Street, Wakefield</title>
+<meta name="description" content="KRA:FT Koffee — specialty coffee and evening cocktails at 14 Wood Street, Wakefield. A high-end coffee shop, barbershop and tattoo studio on one floorplate. North Star roasters. Modbar espresso.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#0a0a0a;
+  --ink-2:#161512;
+  --paper:#F2EBDF;
+  --paper-2:#E5DBC9;
+  --amber:#C9772E;
+  --bean:#6B3A1F;
+  --rule:rgba(242,235,223,.18);
+  --rule-on-paper:rgba(10,10,10,.18);
+  --display:"Instrument Serif", "Cormorant Garamond", Georgia, serif;
+  --mono:"Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --rhythm:clamp(.95rem,.55rem + .85vw,1.06rem);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--mono);
+  font-size:var(--rhythm);
+  line-height:1.55;
+  font-feature-settings:"ss01" on;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+p{text-wrap:pretty;hyphens:auto;max-width:62ch}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;line-height:.92;letter-spacing:-.012em}
+a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;transition:opacity .2s ease}
+a:hover{opacity:.62}
+
+.mono{font-family:var(--mono)}
+.serif{font-family:var(--display)}
+.italic{font-style:italic}
+.amber{color:var(--amber)}
+.tabular{font-variant-numeric:tabular-nums}
+.shout{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem}
+
+.wrap{max-width:1320px;margin-inline:auto;padding-inline:clamp(1.1rem,3vw,2.4rem)}
+
+/* ── TOP STRIP ──────────────────────────────────────────────── */
+.top{
+  border-bottom:1px solid var(--rule);
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.top__row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-block:1rem;gap:1.2rem;flex-wrap:wrap;
+}
+.top__row span{display:inline-flex;align-items:center;gap:.55rem}
+.dot{width:.42rem;height:.42rem;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(201,119,46,.18)}
+
+/* ── HERO ────────────────────────────────────────────────────── */
+.hero{
+  padding:clamp(2.4rem,7vw,5.2rem) 0 clamp(3rem,8vw,6rem);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(1100px 540px at 14% 8%, rgba(201,119,46,.10), transparent 60%),
+    radial-gradient(900px 600px at 88% 92%, rgba(107,58,31,.14), transparent 65%);
+  z-index:0;
+}
+.hero > *{position:relative;z-index:1}
+
+.eyebrow{
+  display:flex;align-items:center;gap:.9rem;
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(242,235,223,.66);
+  margin-bottom:clamp(1.6rem,3.5vw,2.6rem);
+}
+.eyebrow .bar{flex:1;height:1px;background:var(--rule);max-width:140px}
+
+.wordmark{
+  font-family:var(--display);
+  font-size:clamp(6rem,21vw,18.6rem);
+  line-height:.84;
+  letter-spacing:-.04em;
+  margin:0 0 clamp(1.4rem,3vw,2.4rem);
+}
+.wordmark .colon{
+  color:var(--amber);
+  font-style:italic;
+  display:inline-block;
+  transform:translateY(-.04em);
+  padding-inline:.02em;
+}
+
+.hero__below{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:clamp(1.6rem,4vw,3.8rem);
+  align-items:end;
+}
+.hero__lede{
+  font-family:var(--display);font-style:italic;
+  font-size:clamp(1.45rem,2.7vw,2.2rem);
+  line-height:1.18;letter-spacing:-.005em;
+  color:rgba(242,235,223,.92);
+  max-width:34ch;
+}
+.hero__lede em{font-style:normal;color:var(--amber)}
+
+.statuscard{
+  border:1px solid var(--rule);
+  padding:1.2rem 1.4rem;
+  display:grid;gap:.55rem;
+  font-size:.78rem;letter-spacing:.06em;
+  text-transform:uppercase;font-family:var(--mono);
+  background:linear-gradient(180deg, rgba(242,235,223,.02), transparent);
+}
+.statuscard b{font-weight:500;color:var(--amber);letter-spacing:.16em}
+.statuscard small{
+  display:block;color:rgba(242,235,223,.55);
+  font-size:.66rem;letter-spacing:.15em;margin-top:.3rem
+}
+
+@media (max-width:760px){
+  .hero__below{grid-template-columns:1fr}
+}
+
+/* ── MARQUEE ─────────────────────────────────────────────────── */
+.marquee{
+  border-block:1px solid var(--rule);
+  padding-block:1.05rem;
+  overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  background:rgba(242,235,223,.02);
+}
+.marquee__track{
+  display:inline-flex;gap:3.4rem;white-space:nowrap;
+  animation:scroll 46s linear infinite;
+  font-family:var(--display);font-style:italic;
+  font-size:clamp(1.4rem,2.6vw,2rem);letter-spacing:-.005em;
+  color:rgba(242,235,223,.85);
+}
+.marquee__track span::before{
+  content:"✦";color:var(--amber);margin-right:3.4rem;font-style:normal;font-size:.7em;vertical-align:.18em;
+}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee__track{animation:none}}
+
+/* ── PAPER PANEL ─────────────────────────────────────────────── */
+.paper{
+  background:var(--paper);
+  color:var(--ink);
+}
+.paper p{color:var(--ink-2)}
+.paper a{border-bottom-color:var(--ink-2)}
+.paper .rule{background:var(--rule-on-paper)}
+
+/* ── FOUR THINGS ─────────────────────────────────────────────── */
+.four{padding:clamp(3.4rem,8vw,6.6rem) 0 clamp(2.2rem,5vw,4rem)}
+.four__h{
+  display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;
+  margin-bottom:clamp(2rem,4vw,3.4rem);
+}
+.four h2{
+  font-size:clamp(2.6rem,5.4vw,4.6rem);
+  max-width:18ch;
+}
+.four h2 i{color:var(--amber)}
+.four__count{font-family:var(--mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bean)}
+
+.things{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--rule-on-paper);
+}
+.thing{
+  border-right:1px solid var(--rule-on-paper);
+  padding:1.6rem 1.4rem 2rem;
+  display:flex;flex-direction:column;gap:.9rem;
+  position:relative;
+}
+.thing:last-child{border-right:none}
+.thing__num{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;color:var(--bean);text-transform:uppercase;
+}
+.thing__name{
+  font-family:var(--display);font-size:clamp(1.9rem,3vw,2.6rem);line-height:1;letter-spacing:-.01em;
+}
+.thing__name em{color:var(--amber);font-style:italic}
+.thing p{font-size:.95rem;line-height:1.5;max-width:none}
+.thing__when{
+  margin-top:auto;padding-top:.9rem;border-top:1px dashed var(--rule-on-paper);
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bean);
+}
+
+@media (max-width:920px){.things{grid-template-columns:1fr 1fr}.thing:nth-child(2){border-right:none}}
+@media (max-width:560px){.things{grid-template-columns:1fr}.thing{border-right:none;border-bottom:1px solid var(--rule-on-paper)}.thing:last-child{border-bottom:none}}
+
+/* ── COFFEE DETAIL ───────────────────────────────────────────── */
+.coffee{
+  padding:clamp(3.4rem,8vw,6.4rem) 0;
+  border-top:1px solid var(--rule);
+}
+.coffee__grid{
+  display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,5vw,5rem);
+  align-items:start;
+}
+.coffee h2{
+  font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:.95;margin-bottom:1.6rem;
+}
+.coffee h2 i{color:var(--amber)}
+.coffee p{margin-bottom:1.1rem;color:rgba(242,235,223,.86);max-width:48ch}
+
+.specs{
+  display:grid;gap:0;
+  border:1px solid var(--rule);
+}
+.spec{
+  display:grid;grid-template-columns:11rem 1fr;
+  border-bottom:1px solid var(--rule);
+  padding:1.1rem 1.3rem;align-items:baseline;gap:1.2rem;
+}
+.spec:last-child{border-bottom:none}
+.spec dt{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(242,235,223,.55);
+}
+.spec dd{
+  font-family:var(--display);font-style:italic;
+  font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.18;
+}
+.spec dd small{
+  display:block;font-family:var(--mono);font-style:normal;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(242,235,223,.45);margin-top:.35rem;
+}
+
+@media (max-width:820px){.coffee__grid{grid-template-columns:1fr}.spec{grid-template-columns:1fr}.spec dd{font-size:1.25rem}}
+
+/* ── VISIT ───────────────────────────────────────────────────── */
+.visit{
+  padding:clamp(3.4rem,8vw,6.4rem) 0;
+}
+.visit__top{
+  display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:2.6rem;
+}
+.visit h2{
+  font-size:clamp(2.6rem,5.4vw,4.8rem);
+  max-width:14ch;line-height:.92;
+}
+.visit h2 i{color:var(--amber);font-style:italic}
+.visit__co{font-family:var(--mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bean);text-align:right}
+
+.address{
+  font-family:var(--display);
+  font-size:clamp(1.6rem,3vw,2.2rem);
+  line-height:1.22;letter-spacing:-.005em;
+  display:grid;gap:.15rem;
+  margin-bottom:2.4rem;color:var(--ink);
+}
+.address .line{display:block}
+.address .post{font-family:var(--mono);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bean);margin-top:.6rem}
+
+.rhythm{
+  display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;
+  border-top:1px solid var(--rule-on-paper);padding-top:2rem;
+}
+.rhythm h3{
+  font-size:clamp(1.6rem,2.6vw,2rem);margin-bottom:.6rem;font-style:italic;
+}
+.rhythm h3 i{color:var(--amber);font-style:italic}
+.rhythm p{font-size:1rem;line-height:1.5;max-width:42ch}
+
+.find{
+  margin-top:3rem;border-top:1px solid var(--rule-on-paper);padding-top:1.6rem;
+  display:flex;flex-wrap:wrap;gap:1.4rem 2.6rem;
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+}
+.find a{border-bottom-style:dashed}
+
+@media (max-width:760px){.rhythm{grid-template-columns:1fr}.visit__top{grid-template-columns:1fr}.visit__co{text-align:left}}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.foot{
+  background:var(--ink-2);
+  color:var(--paper);
+  padding:clamp(3rem,6vw,4.4rem) 0 2.6rem;
+  border-top:1px solid var(--rule);
+}
+.foot__letter{
+  font-family:var(--display);font-style:italic;
+  font-size:clamp(2.4rem,5vw,4rem);
+  line-height:1.04;letter-spacing:-.012em;
+  margin-bottom:2.2rem;
+}
+.foot__letter span{display:block}
+.foot__letter b{font-weight:400;color:var(--amber);font-style:normal}
+
+.foot__meta{
+  display:flex;flex-wrap:wrap;gap:1.2rem 2.4rem;
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(242,235,223,.62);
+  padding-top:1.6rem;border-top:1px solid var(--rule);
+}
+
+/* ── SCROLL REVEAL (progressive) ─────────────────────────────── */
+@supports (animation-timeline: view()) {
+  .reveal{animation:rise both;animation-timeline:view();animation-range:entry 0% cover 24%}
+  @keyframes rise{from{opacity:0;transform:translateY(2.4rem)}to{opacity:1;transform:translateY(0)}}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none !important}
+}
+
+::selection{background:var(--amber);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- ── TOP STRIP ─────────────────────────────────────────────────── -->
+<header class="top">
+  <div class="wrap top__row">
+    <span><span class="dot" aria-hidden="true"></span>Trading on Wood Street</span>
+    <span>14 Wood Street · Wakefield · WF1&nbsp;2ED</span>
+    <span><a href="https://www.instagram.com/kraftwakefield/" rel="noopener">@kraftwakefield</a></span>
+  </div>
+</header>
+
+<!-- ── HERO ──────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="wrap">
+
+    <div class="eyebrow">
+      <span>Est. 2020 · independent</span>
+      <span class="bar" aria-hidden="true"></span>
+      <span>Wakefield, West Yorkshire</span>
+    </div>
+
+    <h1 class="wordmark">KRA<span class="colon">:</span>FT</h1>
+
+    <div class="hero__below">
+      <p class="hero__lede">
+        A specialty coffee shop by morning, a cocktail bar by night —
+        with a <em>barbers</em> on the same floor and tattoo artists
+        upstairs. One door, four trades, Wood Street.
+      </p>
+
+      <aside class="statuscard" aria-label="What we are">
+        <span><b>Koffee</b> &nbsp;·&nbsp; mornings &amp; afternoons</span>
+        <span><b>Kocktails</b> &nbsp;·&nbsp; Thursday → Sunday, late</span>
+        <span><b>Barbers</b> &nbsp;·&nbsp; by appointment</span>
+        <span><b>Tattoo</b> &nbsp;·&nbsp; resident artists, upstairs</span>
+        <small>14 Wood St · Wakefield WF1 2ED</small>
+      </aside>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── MARQUEE ───────────────────────────────────────────────────── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>North Star roasters</span>
+    <span>Modbar espresso</span>
+    <span>Hand-poured filter</span>
+    <span>Espresso martinis after dark</span>
+    <span>Brazil &amp; Kenya origins</span>
+    <span>Independent · Wakefield</span>
+    <span>Walk-ins for coffee</span>
+    <!-- duplicated for seamless loop -->
+    <span>North Star roasters</span>
+    <span>Modbar espresso</span>
+    <span>Hand-poured filter</span>
+    <span>Espresso martinis after dark</span>
+    <span>Brazil &amp; Kenya origins</span>
+    <span>Independent · Wakefield</span>
+    <span>Walk-ins for coffee</span>
+  </div>
+</div>
+
+<!-- ── FOUR THINGS ───────────────────────────────────────────────── -->
+<section class="paper four">
+  <div class="wrap">
+
+    <div class="four__h reveal">
+      <h2>Four things <i>on one floor.</i></h2>
+      <div class="four__count">01 · The room</div>
+    </div>
+
+    <div class="things">
+
+      <article class="thing reveal">
+        <span class="thing__num">N⁰ 01</span>
+        <h3 class="thing__name">K<em>:</em>offee</h3>
+        <p>Specialty single-origin from North Star Coffee Roasters in Leeds, pulled on a Modbar — everything weighed, every dose checked. Cortados a speciality.</p>
+        <div class="thing__when">Daytime</div>
+      </article>
+
+      <article class="thing reveal">
+        <span class="thing__num">N⁰ 02</span>
+        <h3 class="thing__name">K<em>:</em>ocktails</h3>
+        <p>Same room, lights down. Espresso martinis built from the day's beans, plus a short, considered list. Thursdays through Sundays.</p>
+        <div class="thing__when">Late, Thu → Sun</div>
+      </article>
+
+      <article class="thing reveal">
+        <span class="thing__num">N⁰ 03</span>
+        <h3 class="thing__name">B<em>:</em>arbers</h3>
+        <p>Cuts and hot-towel shaves alongside the brew bar. Run by Lisa — a barber by trade after twelve years in the police. Booked, not walk-in.</p>
+        <div class="thing__when">By appointment</div>
+      </article>
+
+      <article class="thing reveal">
+        <span class="thing__num">N⁰ 04</span>
+        <h3 class="thing__name">T<em>:</em>attoo</h3>
+        <p>Resident artists, working upstairs above the coffee bar. Private studio rooms — a quiet floor over a noisy one. Booking direct with the artists.</p>
+        <div class="thing__when">Upstairs</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── COFFEE DETAIL ─────────────────────────────────────────────── -->
+<section class="coffee">
+  <div class="wrap">
+
+    <div class="coffee__grid">
+
+      <div class="reveal">
+        <h2>What we pour, <i>and why.</i></h2>
+        <p>
+          There wasn't really specialty coffee in Wakefield when we
+          opened. So we set out to build the kind of room we'd want
+          to drink in: high-end, considered, not a chain copy.
+        </p>
+        <p>
+          We pour beans from <a href="https://northstarroast.com/" rel="noopener">North&nbsp;Star Coffee Roasters</a>
+          in Leeds — chosen for the cup and the fair-wages economics behind
+          it. Brazil for the espresso, Kenya for the filter, rotating
+          guest origins through the week.
+        </p>
+        <p>
+          The kit is a Modbar — espresso modules sunk into the bar
+          rather than perched on top of it. Less spectacle, more
+          eye-contact across the counter, and a brew that's the same
+          on the first shot as it is on the four-hundredth.
+        </p>
+      </div>
+
+      <dl class="specs reveal" aria-label="Specs">
+        <div class="spec"><dt>Roaster</dt><dd>North Star, Leeds<small>independent · b-corp</small></dd></div>
+        <div class="spec"><dt>Espresso</dt><dd>Brazilian single origin<small>cortado, the house pour</small></dd></div>
+        <div class="spec"><dt>Filter</dt><dd>Kenyan + rotating guest<small>hand-poured, weighed</small></dd></div>
+        <div class="spec"><dt>Machine</dt><dd>Modbar AV<small>sub-counter espresso modules</small></dd></div>
+        <div class="spec"><dt>After dark</dt><dd>Espresso martini, &amp; a short list<small>same beans, different glass</small></dd></div>
+      </dl>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── VISIT ─────────────────────────────────────────────────────── -->
+<section class="paper visit">
+  <div class="wrap">
+
+    <div class="visit__top reveal">
+      <h2>Find us on <i>Wood Street.</i></h2>
+      <div class="visit__co">02 · Visit</div>
+    </div>
+
+    <address class="address reveal">
+      <span class="line">KRA:FT</span>
+      <span class="line">14 Wood Street</span>
+      <span class="line">Wakefield</span>
+      <span class="post">WF1 2ED</span>
+    </address>
+
+    <div class="rhythm">
+      <div class="reveal">
+        <h3>By <i>day.</i></h3>
+        <p>
+          Coffee from the morning. Pastries while they last. A bench
+          by the window for working, a counter seat for chatting, a
+          chair for a cut next door. Walk-ins welcome.
+        </p>
+      </div>
+      <div class="reveal">
+        <h3>By <i>night.</i></h3>
+        <p>
+          Lights down Thursday through Sunday. Espresso martinis from
+          the day's beans, a tight cocktail list, neighbours in for
+          one before walking home.
+        </p>
+      </div>
+    </div>
+
+    <div class="find">
+      <a href="https://maps.google.com/?q=KRA:FT+14+Wood+Street+Wakefield+WF1+2ED" rel="noopener">Map &amp; directions</a>
+      <a href="https://www.instagram.com/kraftcoffeee/" rel="noopener">Instagram · coffee</a>
+      <a href="https://www.instagram.com/kraftwakefield/" rel="noopener">Instagram · the room</a>
+      <a href="https://www.facebook.com/kraftwakefield/" rel="noopener">Facebook</a>
+      <a href="mailto:kraftkoffee@icloud.com">Email us</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────── -->
+<footer class="foot">
+  <div class="wrap">
+
+    <div class="foot__letter">
+      <span>KRA<b>:</b>FT — independent on Wood Street since 2020.</span>
+      <span>Wakefield's specialty coffee, weighed and cared for.</span>
+    </div>
+
+    <div class="foot__meta">
+      <span>14 Wood St · Wakefield · WF1 2ED</span>
+      <span>kraftkoffee@icloud.com</span>
+      <span>@kraftwakefield · @kraftcoffeee</span>
+      <span>© KRA:FT Wakefield</span>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
